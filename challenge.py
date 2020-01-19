@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 import secrets
+import sys
 
 SECRET = secrets.token_hex(64)
 
@@ -12,6 +13,7 @@ class Sandbox:
     def ask_secret(self):
         if input("What is the secret ? ") == SECRET:
             print("You found the secret ! I thought this was impossible.")
+            sys.exit(0)
         else:
             print("Wrong secret")
 
