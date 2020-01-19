@@ -5,7 +5,7 @@ answer = ""
 
 while not "You found the secret" in answer:
     print(0)
-    print("{self.ask_secret.__globals__[SECRET][%d]}>9" % (i,))
+    print("{self.ask_secret.__globals__[SECRET][%d]}>9" % len(password))
     input()
     input()
     password += input()[10]
