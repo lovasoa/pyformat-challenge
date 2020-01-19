@@ -2,7 +2,7 @@
 import secrets
 import sys
 
-SECRET = secrets.token_hex(64)
+SECRET = secrets.token_hex()
 
 class Sandbox:
 
@@ -18,12 +18,13 @@ class Sandbox:
             print("Wrong secret")
 
     def run(self):
-        while True:
+        for _ in range(100):
             self.ask_age()
             to_format = f"""
 Printing a {self.width}-character wide box:
 [Age: {{self.age:{self.width}}} ]"""
             print(to_format.format(self=self))
             self.ask_secret()
+        sys.exit(1)
 
 Sandbox().run()
