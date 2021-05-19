@@ -1,3 +1,7 @@
+#!/usr/bin/env bash
+
 set -o pipefail
+
 mkfifo fifo
-python3 crack.py < fifo | python3 challenge.py | tee fifo
+./crack.py < fifo | ./challenge.py | tee fifo
+rm -f fifo
